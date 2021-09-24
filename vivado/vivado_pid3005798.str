@@ -1,0 +1,818 @@
+/*
+
+Xilinx Vivado v2020.1 (64-bit) [Major: 2020, Minor: 1]
+SW Build: 2902540 on Wed May 27 19:54:35 MDT 2020
+IP Build: 2902112 on Wed May 27 22:43:36 MDT 2020
+
+Process ID (PID): 3005798
+License: Customer
+
+Current time: 	Thu Sep 23 15:23:12 EET 2021
+Time zone: 	Eastern European Standard Time (Europe/Istanbul)
+
+OS: Ubuntu
+OS Version: 5.11.0-34-generic
+OS Architecture: amd64
+Available processors (cores): 16
+
+Display: :0
+Screen size: 1920x1080
+Screen resolution (DPI): 100
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	/tools/Xilinx/Vivado/2020.1/tps/lnx64/jre9.0.4
+Java executable location: 	/tools/Xilinx/Vivado/2020.1/tps/lnx64/jre9.0.4/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	egoncu
+User home directory: /home/egoncu
+User working directory: /home/egoncu/Desktop/github/GPS_project/vivado
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /tools/Xilinx/Vivado
+HDI_APPROOT: /tools/Xilinx/Vivado/2020.1
+RDI_DATADIR: /tools/Xilinx/Vivado/2020.1/data
+RDI_BINDIR: /tools/Xilinx/Vivado/2020.1/bin
+
+Vivado preferences file location: /home/egoncu/.Xilinx/Vivado/2020.1/vivado.xml
+Vivado preferences directory: /home/egoncu/.Xilinx/Vivado/2020.1/
+Vivado layouts directory: /home/egoncu/.Xilinx/Vivado/2020.1/data/layouts
+PlanAhead jar file location: 	/tools/Xilinx/Vivado/2020.1/lib/classes/planAhead.jar
+Vivado log file location: 	/home/egoncu/Desktop/github/GPS_project/vivado/vivado.log
+Vivado journal file location: 	/home/egoncu/Desktop/github/GPS_project/vivado/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-3005798-egoncu-desktop
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /tools/Xilinx/Vivado/2020.1/ids_lite/ISE
+XILINX_DSP: /tools/Xilinx/Vivado/2020.1/ids_lite/ISE
+XILINX_PLANAHEAD: /tools/Xilinx/Vivado/2020.1
+XILINX_SDK: /tools/Xilinx/Vitis/2020.1
+XILINX_VITIS: /tools/Xilinx//Vitis/2020.1
+XILINX_VIVADO: /tools/Xilinx/Vivado/2020.1
+XILINX_VIVADO_HLS: /tools/Xilinx/Vivado/2020.1
+
+
+GUI allocated memory:	185 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,349 MB
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+// HMemoryUtils.trashcanNow. Engine heap size: 1,349 MB. GUI used memory: 64 MB. Current time: 9/23/21, 3:23:13 PM EET
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+selectButton(PAResourceEtoH.GettingStartedView_CREATE_NEW_PROJECT, "Create Project"); // y (x, cs)
+// Run Command: PAResourceCommand.PACommandNames_NEW_PROJECT
+// [GUI Memory]: 81 MB (+82241kb) [00:00:26]
+// [Engine Memory]: 1,353 MB (+1267112kb) [00:00:26]
+// [GUI Memory]: 97 MB (+13092kb) [00:00:28]
+// [GUI Memory]: 114 MB (+12641kb) [00:00:28]
+// f (cs): New Project: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, f)
+setText(PAResourceOtoP.ProjectNameChooser_PROJECT_NAME, "fifo_module"); // ac (Q, f)
+selectButton("NEXT", "Next >"); // JButton (j, f)
+selectButton("NEXT", "Next >"); // JButton (j, f)
+selectComboBox(PAResourceQtoS.SrcChooserPanel_TARGET_LANGUAGE, "VHDL", 0); // e (Q, f)
+selectButton("NEXT", "Next >"); // JButton (j, f)
+selectButton("NEXT", "Next >"); // JButton (j, f)
+// WARNING: HEventQueue.dispatchEvent() is taking  1434 ms.
+selectTab(PAResourceOtoP.PartChooser_TABBED_PANE, (HResource) null, "Boards", 1); // i (T, f)
+selectTab(PAResourceOtoP.PartChooser_TABBED_PANE, (HResource) null, "Boards", 1); // i (T, f)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,411 MB. GUI used memory: 69 MB. Current time: 9/23/21, 3:23:54 PM EET
+// WARNING: HEventQueue.dispatchEvent() is taking  2372 ms.
+// [Engine Memory]: 1,490 MB (+72953kb) [00:01:00]
+// Elapsed time: 11 seconds
+selectTable(PAResourceAtoD.BoardChooser_BOARD_TABLE, "Zynq UltraScale+ ZCU104 Evaluation Board ; Zynq UltraScale+ ZCU104 Evaluation Board ; xilinx.com ; 1.1 ; xczu7ev-ffvc1156-2-e ; 1156 ; RevC ; 360 ; 230400 ; 460800 ; 312 ; 96 ; 1728 ; 20 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 20 ; 0 ; 0 ; 2 ; 8 ; 0 ; 100 ; 100 ; E ; 0.825 ; 0.850 ; 0.876", 23, "xczu7ev-ffvc1156-2-e", 4); // d (J, f)
+// [GUI Memory]: 131 MB (+11200kb) [00:01:06]
+selectButton("NEXT", "Next >"); // JButton (j, f)
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// bz (f):  Create Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: create_project fifo_module /home/egoncu/Desktop/github/GPS_project/vivado/fifo_module -part xczu7ev-ffvc1156-2-e 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// WARNING: HEventQueue.dispatchEvent() is taking  2025 ms.
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2020.1/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,490 MB. GUI used memory: 78 MB. Current time: 9/23/21, 3:24:23 PM EET
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: create_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:08 . Memory (MB): peak = 7016.594 ; gain = 35.020 ; free physical = 1405 ; free virtual = 8264 
+// TclEventType: BOARD_MODIFIED
+// Tcl Message: set_property board_part xilinx.com:zcu104:part0:1.1 [current_project] 
+// TclEventType: PROJECT_CHANGE
+// Tcl Message: set_property target_language VHDL [current_project] 
+// Elapsed time: 14 seconds
+selectButton("FINISH", "Finish"); // JButton (j, f)
+// 'g' command handler elapsed time: 55 seconds
+dismissDialog("Create Project"); // bz (f)
+dismissDialog("New Project"); // f (cs)
+// Elapsed time: 10 seconds
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // E (g, cs)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cs): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, c)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a (E, c)
+setFileChooser("/home/egoncu/Desktop/github/GPS_project/rtl/fifo_module.vhd");
+selectButton("FINISH", "Finish"); // JButton (j, c)
+// 'h' command handler elapsed time: 9 seconds
+dismissDialog("Add Sources"); // c (cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -norecurse /home/egoncu/Desktop/github/GPS_project/rtl/fifo_module.vhd 
+// [GUI Memory]: 142 MB (+5285kb) [00:01:41]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,551 MB. GUI used memory: 81 MB. Current time: 9/23/21, 3:24:53 PM EET
+// Elapsed time: 12 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files]", 1); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files, fifo_module.vhd]", 2, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files, fifo_module.vhd]", 2, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("fifo_module.vhd", 220, 268); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,559 MB. GUI used memory: 78 MB. Current time: 9/23/21, 3:54:53 PM EET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 1,575 MB (+11072kb) [00:57:03]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,538 MB. GUI used memory: 67 MB. Current time: 9/23/21, 4:20:08 PM EET
+// Elapsed time: 3311 seconds
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // h (ds, cs)
+selectCodeEditor("fifo_module.vhd", 107, 52); // bP (w, cs)
+selectCodeEditor("fifo_module.vhd", 107, 52, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("fifo_module.vhd", 89, 57); // bP (w, cs)
+selectCodeEditor("fifo_module.vhd", 89, 57, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "fifo_module.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("fifo_module.vhd", 87, 178); // bP (w, cs)
+selectCodeEditor("fifo_module.vhd", 87, 178, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "fifo_module.vhd", 'v'); // bP (w, cs)
+selectCodeEditor("fifo_module.vhd", 244, 190); // bP (w, cs)
+selectCodeEditor("fifo_module.vhd", 246, 190, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "fifo_module.vhd", 'v'); // bP (w, cs)
+selectCodeEditor("fifo_module.vhd", 86, 206); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 35 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // aa (q, cs)
+selectMenu(RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, "Custom Commands"); // af (cs)
+selectMenuItem(PAResourceCommand.PACommandNames_LANGUAGE_TEMPLATES, "Language Templates"); // ai (cs)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // aa (q, cs)
+// Run Command: PAResourceCommand.PACommandNames_LANGUAGE_TEMPLATES
+// a (cs): Language Templates: addNotify
+expandTree(PAResourceItoN.LanguageTemplatesDialog_TEMPLATES_TREE, "[Templates, VHDL]", 1); // a (J, a)
+expandTree(PAResourceItoN.LanguageTemplatesDialog_TEMPLATES_TREE, "[Templates, VHDL, Xilinx Parameterized Macros (XPM)]", 8); // a (J, a)
+expandTree(PAResourceItoN.LanguageTemplatesDialog_TEMPLATES_TREE, "[Templates, VHDL, Xilinx Parameterized Macros (XPM), XPM]", 10); // a (J, a)
+expandTree(PAResourceItoN.LanguageTemplatesDialog_TEMPLATES_TREE, "[Templates, VHDL, Xilinx Parameterized Macros (XPM), XPM, XPM_FIFO]", 12); // a (J, a)
+selectTree(PAResourceItoN.LanguageTemplatesDialog_TEMPLATES_TREE, "[Templates, VHDL, Xilinx Parameterized Macros (XPM), XPM, XPM_FIFO]", 12, true); // a (J, a) - Node
+selectTree(PAResourceItoN.LanguageTemplatesDialog_TEMPLATES_TREE, "[Templates, VHDL, Xilinx Parameterized Macros (XPM), XPM, XPM_FIFO, Synchronous FIFO (xpm_fifo_sync)]", 17, false); // a (J, a)
+// Elapsed time: 10 seconds
+selectTree(PAResourceItoN.LanguageTemplatesDialog_TEMPLATES_TREE, "[Templates, VHDL, Xilinx Parameterized Macros (XPM), XPM, XPM_FIFO, AXI Stream FIFO (xpm_fifo_axis)]", 16, false); // a (J, a)
+// Elapsed time: 21 seconds
+selectTree(PAResourceItoN.LanguageTemplatesDialog_TEMPLATES_TREE, "[Templates, VHDL, Xilinx Parameterized Macros (XPM), XPM, XPM_FIFO, Asynchronous FIFO (xpm_fifo_async)]", 13, false); // a (J, a)
+// Elapsed time: 15 seconds
+typeControlKey(null, null, 'c'); // c (c, a)
+selectCodeEditor("fifo_module.vhd", 552, 273); // bP (w, cs)
+selectButton(RDIResource.BaseDialog_CLOSE, "Close"); // a (a)
+dismissDialog("Language Templates"); // a (cs)
+selectCodeEditor("fifo_module.vhd", 117, 211); // bP (w, cs)
+typeControlKey((HResource) null, "fifo_module.vhd", 'v'); // bP (w, cs)
+selectCodeEditor("fifo_module.vhd", 43, 216); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,610 MB. GUI used memory: 69 MB. Current time: 9/23/21, 4:22:33 PM EET
+// Elapsed time: 21 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // aa (q, cs)
+selectMenu(RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, "Custom Commands"); // af (cs)
+selectMenuItem(PAResourceCommand.PACommandNames_LANGUAGE_TEMPLATES, "Language Templates"); // ai (cs)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // aa (q, cs)
+// Run Command: PAResourceCommand.PACommandNames_LANGUAGE_TEMPLATES
+// a (cs): Language Templates: addNotify
+// Elapsed time: 10 seconds
+typeControlKey(null, null, 'c'); // c (c, a)
+selectCodeEditor("fifo_module.vhd", 779, 175, false, true, false, false, false); // bP (w, cs) - Control Key
+selectCodeEditor("fifo_module.vhd", 793, 169); // bP (w, cs)
+selectButton(RDIResource.BaseDialog_CLOSE, "Close"); // a (a)
+dismissDialog("Language Templates"); // a (cs)
+selectCodeEditor("fifo_module.vhd", 191, 30); // bP (w, cs)
+typeControlKey((HResource) null, "fifo_module.vhd", 'v'); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 16 seconds
+selectCodeEditor("fifo_module.vhd", 199, 269); // bP (w, cs)
+selectCodeEditor("fifo_module.vhd", 199, 268, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("fifo_module.vhd", 156, 292); // bP (w, cs)
+selectCodeEditor("fifo_module.vhd", 173, 307); // bP (w, cs)
+selectCodeEditor("fifo_module.vhd", 173, 307, false, false, false, false, true); // bP (w, cs) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,643 MB. GUI used memory: 69 MB. Current time: 9/23/21, 4:23:23 PM EET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 1,659 MB (+5259kb) [01:03:43]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,659 MB. GUI used memory: 70 MB. Current time: 9/23/21, 4:53:23 PM EET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,675 MB. GUI used memory: 69 MB. Current time: 9/23/21, 5:06:03 PM EET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,707 MB. GUI used memory: 69 MB. Current time: 9/23/21, 5:09:48 PM EET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 2844 seconds
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fifo_module(Behavioral) (fifo_module.vhd)]", 1, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fifo_module(Behavioral) (fifo_module.vhd)]", 1, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Elapsed time: 124 seconds
+selectCodeEditor("fifo_module.vhd", 163, 402); // bP (w, cs)
+selectCodeEditor("fifo_module.vhd", 163, 402, false, false, false, false, true); // bP (w, cs) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,740 MB. GUI used memory: 71 MB. Current time: 9/23/21, 5:12:58 PM EET
+// Elapsed time: 294 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // aa (q, cs)
+selectMenuItem(PAResourceCommand.PACommandNames_IP_PACKAGER_WIZARD, "Create and Package New IP..."); // ai (cs)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // aa (q, cs)
+// Run Command: PAResourceCommand.PACommandNames_IP_PACKAGER_WIZARD
+// Q (cs): Create and Package New IP: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+selectRadioButton(PAResourceItoN.NewIpWizard_CREATE_NEW_AXI4_IP_CREATE_AXI4, "Create a new AXI4 peripheral. Create an AXI4 IP, driver, software test application, IP Integrator AXI4 VIP simulation and debug demonstration design."); // b (a, Q)
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+// Elapsed time: 27 seconds
+setText(PAResourceItoN.NewIpWizard_NAME_MYIP, "FIFO_axi_slave"); // ac (Q)
+// Elapsed time: 16 seconds
+setText(PAResourceItoN.NewIpWizard_DESCRIPTION_MY_NEW_AXI_IP, "For buffer"); // ac (Q)
+setText(PAResourceItoN.NewIpWizard_IP_DEFINITION_SOURCE_LOCATION, "/home/egoncu/Desktop/github/GPS_project/ip_repo"); // ao (an, Q)
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+selectButton("FINISH", "Finish"); // JButton (j, Q)
+// 'q' command handler elapsed time: 68 seconds
+// [Engine Memory]: 1,743 MB (+640kb) [01:55:49]
+dismissDialog("Create and Package New IP"); // Q (cs)
+// TclEventType: LOAD_FEATURE
+// Tcl Message: create_peripheral user.org user FIFO_axi_slave 1.0 -dir /home/egoncu/Desktop/github/GPS_project/ip_repo 
+// Tcl Message: add_peripheral_interface S00_AXI -interface_mode slave -axi_type lite [ipx::find_open_core user.org:user:FIFO_axi_slave:1.0] 
+// TclEventType: PACKAGER_OBJECT_ADD
+// Tcl Message: generate_peripheral -bfm_example_design -debug_hw_example_design [ipx::find_open_core user.org:user:FIFO_axi_slave:1.0] 
+// Tcl Message: write_peripheral [ipx::find_open_core user.org:user:FIFO_axi_slave:1.0] 
+// TclEventType: PROJECT_CHANGE
+// Tcl Message: set_property  ip_repo_paths  /home/egoncu/Desktop/github/GPS_project/ip_repo/FIFO_axi_slave_1.0 [current_project] 
+// TclEventType: CREATE_IP_CATALOG
+// Tcl Message: update_ip_catalog -rebuild 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/egoncu/Desktop/github/GPS_project/ip_repo/FIFO_axi_slave_1.0'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,743 MB. GUI used memory: 74 MB. Current time: 9/23/21, 5:42:58 PM EET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,743 MB. GUI used memory: 70 MB. Current time: 9/23/21, 6:12:58 PM EET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,743 MB. GUI used memory: 70 MB. Current time: 9/23/21, 6:42:58 PM EET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,743 MB. GUI used memory: 70 MB. Current time: 9/23/21, 7:12:58 PM EET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,743 MB. GUI used memory: 70 MB. Current time: 9/23/21, 7:42:58 PM EET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,743 MB. GUI used memory: 70 MB. Current time: 9/23/21, 8:12:58 PM EET
+// Elapsed time: 12202 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // aa (q, cs)
+selectMenuItem(PAResourceCommand.PACommandNames_IP_PACKAGER_WIZARD, "Create and Package New IP..."); // ai (cs)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // aa (q, cs)
+// Run Command: PAResourceCommand.PACommandNames_IP_PACKAGER_WIZARD
+// Q (cs): Create and Package New IP: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+selectRadioButton(PAResourceItoN.NewIpWizard_CREATE_NEW_AXI4_IP_CREATE_AXI4, "Create a new AXI4 peripheral. Create an AXI4 IP, driver, software test application, IP Integrator AXI4 VIP simulation and debug demonstration design."); // b (a, Q)
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+// Elapsed time: 20 seconds
+setText(PAResourceItoN.NewIpWizard_NAME_MYIP, "FIFO_axis"); // ac (Q)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,743 MB. GUI used memory: 73 MB. Current time: 9/23/21, 8:42:58 PM EET
+// Elapsed time: 17 seconds
+setText(PAResourceItoN.NewIpWizard_DESCRIPTION_MY_NEW_AXI_IP, "The IP for buffering"); // ac (Q)
+// Elapsed time: 115 seconds
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+// Elapsed time: 15 seconds
+selectButton("FINISH", "Finish"); // JButton (j, Q)
+// 'q' command handler elapsed time: 175 seconds
+dismissDialog("Create and Package New IP"); // Q (cs)
+// Tcl Message: create_peripheral user.org user FIFO_axis 1.0 -dir /home/egoncu/Desktop/github/GPS_project/vivado/ip_repo 
+// Tcl Message: add_peripheral_interface S00_AXI -interface_mode slave -axi_type lite [ipx::find_open_core user.org:user:FIFO_axis:1.0] 
+// TclEventType: PACKAGER_OBJECT_ADD
+// Tcl Message: generate_peripheral -bfm_example_design -debug_hw_example_design [ipx::find_open_core user.org:user:FIFO_axis:1.0] 
+// Tcl Message: write_peripheral [ipx::find_open_core user.org:user:FIFO_axis:1.0] 
+// TclEventType: PROJECT_CHANGE
+// Tcl Message: set_property  ip_repo_paths  {/home/egoncu/Desktop/github/GPS_project/vivado/ip_repo/FIFO_axis_1.0 /home/egoncu/Desktop/github/GPS_project/ip_repo/FIFO_axi_slave_1.0} [current_project] 
+// TclEventType: CREATE_IP_CATALOG
+// Tcl Message: update_ip_catalog -rebuild 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/egoncu/Desktop/github/GPS_project/vivado/ip_repo/FIFO_axis_1.0'. 
+// Elapsed time: 22 seconds
+selectCodeEditor("fifo_module.vhd", 284, 112); // bP (w, cs)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // aa (q, cs)
+selectMenuItem(PAResourceCommand.PACommandNames_IP_PACKAGER_WIZARD, "Create and Package New IP..."); // ai (cs)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // aa (q, cs)
+// Run Command: PAResourceCommand.PACommandNames_IP_PACKAGER_WIZARD
+// Q (cs): Create and Package New IP: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+selectRadioButton(PAResourceItoN.NewIpWizard_CREATE_NEW_AXI4_IP_CREATE_AXI4, "Create a new AXI4 peripheral. Create an AXI4 IP, driver, software test application, IP Integrator AXI4 VIP simulation and debug demonstration design."); // b (a, Q)
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+setText(PAResourceItoN.NewIpWizard_NAME_MYIP, "FIFO_axis"); // ac (Q)
+// Elapsed time: 30 seconds
+setText(PAResourceItoN.NewIpWizard_DESCRIPTION_MY_NEW_AXI_IP, "The FIFO with 2 clock domain with axi interface"); // ac (Q)
+// HOptionPane Error: 'The IP already exists. Change either IP name or version to create a new IP (Error)'
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+selectButton("OptionPane.button", "OK"); // JButton (v, C)
+setText(PAResourceItoN.NewIpWizard_IP_DEFINITION_SOURCE_LOCATION, "/home/egoncu/Desktop/github/GPS_project/ip_repo"); // ao (an, Q)
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+selectButton("FINISH", "Finish"); // JButton (j, Q)
+// 'q' command handler elapsed time: 52 seconds
+dismissDialog("Create and Package New IP"); // Q (cs)
+// Tcl Message: create_peripheral user.org user FIFO_axis 1.0 -dir /home/egoncu/Desktop/github/GPS_project/ip_repo 
+// Tcl Message: add_peripheral_interface S00_AXI -interface_mode slave -axi_type lite [ipx::find_open_core user.org:user:FIFO_axis:1.0] 
+// TclEventType: PACKAGER_OBJECT_ADD
+// Tcl Message: generate_peripheral -bfm_example_design -debug_hw_example_design [ipx::find_open_core user.org:user:FIFO_axis:1.0] 
+// Tcl Message: write_peripheral [ipx::find_open_core user.org:user:FIFO_axis:1.0] 
+// TclEventType: PROJECT_CHANGE
+// Tcl Message: set_property  ip_repo_paths  {/home/egoncu/Desktop/github/GPS_project/ip_repo/FIFO_axis_1.0 /home/egoncu/Desktop/github/GPS_project/vivado/ip_repo/FIFO_axis_1.0 /home/egoncu/Desktop/github/GPS_project/ip_repo/FIFO_axi_slave_1.0} [current_project] 
+// TclEventType: CREATE_IP_CATALOG
+// Tcl Message: update_ip_catalog -rebuild 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/egoncu/Desktop/github/GPS_project/ip_repo/FIFO_axis_1.0'. INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/egoncu/Desktop/github/GPS_project/vivado/ip_repo/FIFO_axis_1.0'. 
+// Elapsed time: 660 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // aa (q, cs)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // aa (q, cs)
+selectMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // aa (q, cs)
+dismissMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // aa (q, cs)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // aa (q, cs)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // af (cs)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // af (cs)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // af (cs)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // af (cs)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // af (cs)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // aa (q, cs)
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, IP Catalog]", 4, false); // u (J, cs)
+// Run Command: PAResourceCommand.PACommandNames_CORE_GEN
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "User Repository ;  ;  ;  ; ", 0, "User Repository", 0, true); // L (J, cs) - Node
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "User Repository ;  ;  ;  ; ", 0, "User Repository", 0, true); // L (J, cs) - Node
+expandTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "User Repository ;  ;  ;  ; ", 0); // L (J, cs)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "User Repository ;  ;  ;  ; ", 0, "User Repository", 0, true, false, false, false, false, true); // L (J, cs) - Double Click - Node
+expandTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "AXI Peripheral ;  ;  ;  ; ", 1); // L (J, cs)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "FIFO_axis_v1.0 ; AXI4 ; Pre-Production ; Included ; user.org:user:FIFO_axis:1.0", 2, "FIFO_axis_v1.0", 0, false); // L (J, cs)
+expandTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "FIFO_axis_v1.0 ; AXI4 ; Pre-Production ; Included ; user.org:user:FIFO_axis:1.0", 2); // L (J, cs)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "FIFO_axis_v1.0 ; AXI4 ; Pre-Production ; Included ; user.org:user:FIFO_axis:1.0", 2, "FIFO_axis_v1.0", 0, false, false, false, false, false, true); // L (J, cs) - Double Click
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_CORE
+// [GUI Memory]: 153 MB (+3724kb) [05:34:53]
+// TclEventType: LOAD_FEATURE
+// r (cs): Customize IP: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (r)
+dismissDialog("Customize IP"); // r (cs)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "FIFO_axis_v1.0 ; AXI4 ; Pre-Production ; Included ; user.org:user:FIFO_axis:1.0", 2, "FIFO_axis_v1.0", 0, false); // L (J, cs)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "FIFO_axis_v1.0 ; AXI4 ; Pre-Production ; Included ; user.org:user:FIFO_axis:1.0", 2, "FIFO_axis_v1.0", 0, false, false, false, false, false, true); // L (J, cs) - Double Click
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_CORE
+// r (cs): Customize IP: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (r)
+// TclEventType: CREATE_IP_CORE
+// TclEventType: REPORT_IP_STATUS_STALE
+dismissDialog("Customize IP"); // r (cs)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: create_ip -name FIFO_axis -vendor user.org -library user -version 1.0 -module_name FIFO_axis_0 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: generate_target {instantiation_template} [get_files /home/egoncu/Desktop/github/GPS_project/vivado/fifo_module/fifo_module.srcs/sources_1/ip/FIFO_axis_0/FIFO_axis_0.xci] 
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'FIFO_axis_0'... 
+// aI (cs): Generate Output Products: addNotify
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_CLOSE_DIALOG_UNSAVED_CHANGES_WILL, "Skip"); // a (aI)
+dismissDialog("Generate Output Products"); // aI (cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,781 MB. GUI used memory: 77 MB. Current time: 9/23/21, 8:58:03 PM EET
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, FIFO_axis_0 (FIFO_axis_0.xci)]", 2, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, FIFO_axis_0 (FIFO_axis_0.xci)]", 2, false, false, false, false, true, false); // B (F, cs) - Popup Trigger
+selectMenuItem(PAResourceCommand.PACommandNames_EDIT_IN_IP_PACKAGER, "Edit in IP Packager"); // ai (ao, cs)
+// Run Command: PAResourceCommand.PACommandNames_EDIT_IN_IP_PACKAGER
+// k (cs): Edit in IP Packager: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (k)
+// bz (cs):  Edit in IP Packager : addNotify
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: ipx::edit_ip_in_project -upgrade true -name FIFO_axis_v1_0_project -directory /home/egoncu/Desktop/github/GPS_project/vivado/fifo_module/fifo_module.tmp/FIFO_axis_v1_0_project /home/egoncu/Desktop/github/GPS_project/ip_repo/FIFO_axis_1.0/component.xml 
+// TclEventType: PROJECT_NEW
+// WARNING: HEventQueue.dispatchEvent() is taking  1635 ms.
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2020.1/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PACKAGER_CURRENT_CORE
+// Run Command: PAResourceCommand.PACommandNames_IP_PACKAGER
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/egoncu/Desktop/github/GPS_project/ip_repo/FIFO_axis_1.0'. INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/egoncu/Desktop/github/GPS_project/vivado/ip_repo/FIFO_axis_1.0'. 
+// Tcl Message: INFO: [IP_Flow 19-795] Syncing license key meta-data 
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// 'i' command handler elapsed time: 6 seconds
+dismissDialog("Edit in IP Packager"); // bz (cs)
+// Tcl Message: current_project fifo_module 
+// [Engine Memory]: 1,885 MB (+57681kb) [05:35:11]
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, FIFO_axis_v1_0(arch_imp) (FIFO_axis_v1_0.vhd)]", 1); // B (F, cs)
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // E (g, cs)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cs): Add Sources: addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 1,894 MB. GUI used memory: 95 MB. Current time: 9/23/21, 8:58:18 PM EET
+selectButton("NEXT", "Next >"); // JButton (j, c)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a (E, c)
+setFileChooser("/home/egoncu/Desktop/github/GPS_project/rtl/fifo_module.vhd");
+selectButton("FINISH", "Finish"); // JButton (j, c)
+// 'h' command handler elapsed time: 14 seconds
+dismissDialog("Add Sources"); // c (cs)
+// Tcl Message: current_project FIFO_axis_v1_0_project 
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -norecurse -copy_to /home/egoncu/Desktop/github/GPS_project/ip_repo/FIFO_axis_1.0/src /home/egoncu/Desktop/github/GPS_project/rtl/fifo_module.vhd 
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,956 MB. GUI used memory: 92 MB. Current time: 9/23/21, 8:58:38 PM EET
+// Elapsed time: 122 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, FIFO_axis_v1_0(arch_imp) (FIFO_axis_v1_0.vhd), FIFO_axis_v1_0_S00_AXI_inst : FIFO_axis_v1_0_S00_AXI(arch_imp) (FIFO_axis_v1_0_S00_AXI.vhd)]", 2, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, FIFO_axis_v1_0(arch_imp) (FIFO_axis_v1_0.vhd), FIFO_axis_v1_0_S00_AXI_inst : FIFO_axis_v1_0_S00_AXI(arch_imp) (FIFO_axis_v1_0_S00_AXI.vhd)]", 2, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Elapsed time: 12 seconds
+selectCodeEditor("FIFO_axis_v1_0_S00_AXI.vhd", 166, 189); // bP (w, cs)
+// Elapsed time: 28 seconds
+typeControlKey((HResource) null, "FIFO_axis_v1_0_S00_AXI.vhd", 'c'); // bP (w, cs)
+typeControlKey((HResource) null, "FIFO_axis_v1_0_S00_AXI.vhd", 'v'); // bP (w, cs)
+typeControlKey((HResource) null, "FIFO_axis_v1_0_S00_AXI.vhd", 'v'); // bP (w, cs)
+typeControlKey((HResource) null, "FIFO_axis_v1_0_S00_AXI.vhd", 'v'); // bP (w, cs)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 1,981 MB (+1666kb) [05:38:29]
+// Elapsed time: 76 seconds
+selectCodeEditor("FIFO_axis_v1_0_S00_AXI.vhd", 115, 444); // bP (w, cs)
+// Elapsed time: 21 seconds
+typeControlKey((HResource) null, "FIFO_axis_v1_0_S00_AXI.vhd", 'c'); // bP (w, cs)
+typeControlKey((HResource) null, "FIFO_axis_v1_0_S00_AXI.vhd", 'v'); // bP (w, cs)
+typeControlKey((HResource) null, "FIFO_axis_v1_0_S00_AXI.vhd", 'v'); // bP (w, cs)
+typeControlKey((HResource) null, "FIFO_axis_v1_0_S00_AXI.vhd", 'v'); // bP (w, cs)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,997 MB. GUI used memory: 94 MB. Current time: 9/23/21, 9:03:08 PM EET
+// Elapsed time: 12 seconds
+selectCodeEditor("FIFO_axis_v1_0_S00_AXI.vhd", 142, 273); // bP (w, cs)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 22 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, FIFO_axis_v1_0(arch_imp) (FIFO_axis_v1_0.vhd)]", 1, true); // B (F, cs) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, FIFO_axis_v1_0(arch_imp) (FIFO_axis_v1_0.vhd)]", 1, true, false, false, false, false, true); // B (F, cs) - Double Click - Node
+// Elapsed time: 89 seconds
+selectCodeEditor("FIFO_axis_v1_0.vhd", 5, 35); // bP (w, cs)
+selectCodeEditor("FIFO_axis_v1_0.vhd", 4, 38); // bP (w, cs)
+selectCodeEditor("FIFO_axis_v1_0.vhd", 1, 39); // bP (w, cs)
+selectCodeEditor("FIFO_axis_v1_0.vhd", 49, 453, true, false, false, false, false); // bP (w, cs) - Shift Key
+typeControlKey((HResource) null, "FIFO_axis_v1_0.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("FIFO_axis_v1_0.vhd", 53, 464); // bP (w, cs)
+selectCodeEditor("FIFO_axis_v1_0.vhd", 127, 246); // bP (w, cs)
+// Elapsed time: 34 seconds
+typeControlKey((HResource) null, "FIFO_axis_v1_0.vhd", 'c'); // bP (w, cs)
+typeControlKey((HResource) null, "FIFO_axis_v1_0.vhd", 'v'); // bP (w, cs)
+// Elapsed time: 12 seconds
+typeControlKey((HResource) null, "FIFO_axis_v1_0.vhd", 'c'); // bP (w, cs)
+typeControlKey((HResource) null, "FIFO_axis_v1_0.vhd", 'v'); // bP (w, cs)
+typeControlKey((HResource) null, "FIFO_axis_v1_0.vhd", 'v'); // bP (w, cs)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,029 MB. GUI used memory: 94 MB. Current time: 9/23/21, 9:06:23 PM EET
+// Elapsed time: 29 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "FIFO_axis_v1_0_S00_AXI.vhd", 2); // m (l, cs)
+selectCodeEditor("FIFO_axis_v1_0_S00_AXI.vhd", 56, 280); // bP (w, cs)
+typeControlKey((HResource) null, "FIFO_axis_v1_0_S00_AXI.vhd", 'c'); // bP (w, cs)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "FIFO_axis_v1_0.vhd", 3); // m (l, cs)
+selectCodeEditor("FIFO_axis_v1_0.vhd", 118, 249); // bP (w, cs)
+typeControlKey((HResource) null, "FIFO_axis_v1_0.vhd", 'v'); // bP (w, cs)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,053 MB. GUI used memory: 94 MB. Current time: 9/23/21, 9:09:38 PM EET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// [Engine Memory]: 2,085 MB (+5741kb) [05:46:41]
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,110 MB. GUI used memory: 94 MB. Current time: 9/23/21, 9:13:43 PM EET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// G (cs): Invalid Top Module: addNotify
+// Elapsed time: 425 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (G)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Invalid Top Module"); // G (cs)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: current_project fifo_module 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,174 MB. GUI used memory: 95 MB. Current time: 9/23/21, 9:14:28 PM EET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 2,190 MB (+429kb) [05:51:40]
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,206 MB. GUI used memory: 94 MB. Current time: 9/23/21, 9:15:08 PM EET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,238 MB. GUI used memory: 95 MB. Current time: 9/23/21, 9:15:58 PM EET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,270 MB. GUI used memory: 95 MB. Current time: 9/23/21, 9:19:13 PM EET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 2,302 MB (+3132kb) [05:57:15]
+// HMemoryUtils.trashcanNow. Engine heap size: 2,302 MB. GUI used memory: 95 MB. Current time: 9/23/21, 9:20:18 PM EET
+// Elapsed time: 415 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fifo_module(Behavioral) (fifo_module.vhd)]", 2, false); // B (F, cs)
+// Tcl Message: current_project FIFO_axis_v1_0_project 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files]", 1); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, FIFO_axis_v1_0.vhd]", 2, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, FIFO_axis_v1_0.vhd]", 2, false, false, false, false, false, true); // B (F, cs) - Double Click
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 11 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, FIFO_axis_v1_0.vhd]", 2, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, FIFO_axis_v1_0.vhd]", 2, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, FIFO_axis_v1_0.vhd]", 2, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Elapsed time: 29 seconds
+selectCodeEditor("FIFO_axis_v1_0.vhd", 45, 230); // bP (w, cs)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,335 MB. GUI used memory: 95 MB. Current time: 9/23/21, 9:21:58 PM EET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 28 seconds
+selectCodeEditor("FIFO_axis_v1_0.vhd", 268, 228); // bP (w, cs)
+// Elapsed time: 41 seconds
+selectCodeEditor("FIFO_axis_v1_0.vhd", 269, 454); // bP (w, cs)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("FIFO_axis_v1_0.vhd", 928, 120); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,360 MB. GUI used memory: 95 MB. Current time: 9/23/21, 9:22:58 PM EET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 48 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "FIFO_axis_v1_0_S00_AXI.vhd", 2); // m (l, cs)
+selectCodeEditor("FIFO_axis_v1_0_S00_AXI.vhd", 162, 337); // bP (w, cs)
+selectCodeEditor("FIFO_axis_v1_0_S00_AXI.vhd", 57, 298); // bP (w, cs)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,416 MB. GUI used memory: 95 MB. Current time: 9/23/21, 9:24:03 PM EET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 2,424 MB (+7126kb) [06:01:07]
+// Elapsed time: 24 seconds
+selectCodeEditor("FIFO_axis_v1_0_S00_AXI.vhd", 33, 413); // bP (w, cs)
+selectCodeEditor("FIFO_axis_v1_0_S00_AXI.vhd", 931, 486); // bP (w, cs)
+selectCodeEditor("FIFO_axis_v1_0_S00_AXI.vhd", 101, 394); // bP (w, cs)
+// Elapsed time: 17 seconds
+selectCodeEditor("FIFO_axis_v1_0_S00_AXI.vhd", 66, 348); // bP (w, cs)
+selectCodeEditor("FIFO_axis_v1_0_S00_AXI.vhd", 66, 348, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "FIFO_axis_v1_0_S00_AXI.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("FIFO_axis_v1_0_S00_AXI.vhd", 36, 451); // bP (w, cs)
+selectCodeEditor("FIFO_axis_v1_0_S00_AXI.vhd", 38, 440); // bP (w, cs)
+typeControlKey((HResource) null, "FIFO_axis_v1_0_S00_AXI.vhd", 'v'); // bP (w, cs)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,449 MB. GUI used memory: 95 MB. Current time: 9/23/21, 9:24:48 PM EET
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "FIFO_axis_v1_0.vhd", 3); // m (l, cs)
+selectCodeEditor("FIFO_axis_v1_0.vhd", 27, 125); // bP (w, cs)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 13 seconds
+selectCodeEditor("FIFO_axis_v1_0.vhd", 131, 369); // bP (w, cs)
+selectCodeEditor("FIFO_axis_v1_0.vhd", 131, 369, false, false, false, false, true); // bP (w, cs) - Double Click
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,481 MB. GUI used memory: 120 MB. Current time: 9/23/21, 9:25:13 PM EET
+selectCodeEditor("FIFO_axis_v1_0.vhd", 211, 338); // bP (w, cs)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 39 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "FIFO_axis_v1_0_S00_AXI.vhd", 2); // m (l, cs)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "FIFO_axis_v1_0.vhd", 3); // m (l, cs)
+selectCodeEditor("FIFO_axis_v1_0.vhd", 31, 336); // bP (w, cs)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "FIFO_axis_v1_0_S00_AXI.vhd", 2); // m (l, cs)
+selectCodeEditor("FIFO_axis_v1_0_S00_AXI.vhd", 55, 278); // bP (w, cs)
+typeControlKey((HResource) null, "FIFO_axis_v1_0_S00_AXI.vhd", 'c'); // bP (w, cs)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "FIFO_axis_v1_0.vhd", 3); // m (l, cs)
+selectCodeEditor("FIFO_axis_v1_0.vhd", 43, 309); // bP (w, cs)
+typeControlKey((HResource) null, "FIFO_axis_v1_0.vhd", 'v'); // bP (w, cs)
+typeControlKey(null, null, 'z');
+selectCodeEditor("FIFO_axis_v1_0.vhd", 499, 383); // bP (w, cs)
+selectButton(RDIResource.CodeView_TOGGLE_COLUMN_SELECTION_MODE, (String) null); // x (g, cs): TRUE
+selectButton(RDIResource.CodeView_TOGGLE_COLUMN_SELECTION_MODE, (String) null); // x (g, cs): FALSE
+selectCodeEditor("FIFO_axis_v1_0.vhd", 41, 309); // bP (w, cs)
+selectCodeEditor("FIFO_axis_v1_0.vhd", 290, 372, true, false, false, false, false); // bP (w, cs) - Shift Key
+typeControlKey((HResource) null, "FIFO_axis_v1_0.vhd", 'v'); // bP (w, cs)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("FIFO_axis_v1_0.vhd", 56, 317); // bP (w, cs)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,522 MB. GUI used memory: 95 MB. Current time: 9/23/21, 9:26:28 PM EET
+// TclEventType: DG_GRAPH_STALE
+// [Engine Memory]: 2,546 MB (+679kb) [06:03:29]
+// Elapsed time: 27 seconds
+selectCodeEditor("FIFO_axis_v1_0.vhd", 114, 371); // bP (w, cs)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 19 seconds
+selectCodeEditor("FIFO_axis_v1_0.vhd", 181, 246); // bP (w, cs)
+selectCodeEditor("FIFO_axis_v1_0.vhd", 130, 321); // bP (w, cs)
+selectCodeEditor("FIFO_axis_v1_0.vhd", 128, 322); // bP (w, cs)
+selectCodeEditor("FIFO_axis_v1_0.vhd", 280, 319, true, false, false, false, false); // bP (w, cs) - Shift Key
+selectCodeEditor("FIFO_axis_v1_0.vhd", 258, 317, true, false, false, false, false); // bP (w, cs) - Shift Key
+typeControlKey((HResource) null, "FIFO_axis_v1_0.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("FIFO_axis_v1_0.vhd", 95, 272); // bP (w, cs)
+typeControlKey((HResource) null, "FIFO_axis_v1_0.vhd", 'v'); // bP (w, cs)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("FIFO_axis_v1_0.vhd", 37, 276); // bP (w, cs)
+selectCodeEditor("FIFO_axis_v1_0.vhd", 37, 276, false, false, false, false, true); // bP (w, cs) - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 2,578 MB. GUI used memory: 95 MB. Current time: 9/23/21, 9:27:28 PM EET
+typeControlKey((HResource) null, "FIFO_axis_v1_0.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("FIFO_axis_v1_0.vhd", 129, 320); // bP (w, cs)
+selectCodeEditor("FIFO_axis_v1_0.vhd", 259, 318, true, false, false, false, false); // bP (w, cs) - Shift Key
+typeControlKey((HResource) null, "FIFO_axis_v1_0.vhd", 'v'); // bP (w, cs)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("FIFO_axis_v1_0.vhd", 322, 386); // bP (w, cs)
+// Elapsed time: 16 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Edit Packaged IP]", 5, false); // u (J, cs)
+// bz (cs):  Open Project Manager : addNotify
+// Run Command: PAResourceCommand.PACommandNames_IP_PACKAGER
+dismissDialog("Open Project Manager"); // bz (cs)
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "File Groups", 2); // ar (J, cs)
+selectButton(PAResourceItoN.MessageBanner_CHANGES_DETECTED_IN_VIVADO_PROJECT_THAT, "Merge changes from File Groups Wizard"); // h (M, cs)
+// TclEventType: PACKAGER_COMPONENT_RESET
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: ipx::merge_project_changes files [ipx::current_core] 
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Customization Parameters", 3); // ar (J, cs)
+selectButton(PAResourceItoN.MessageBanner_CHANGES_DETECTED_IN_VIVADO_PROJECT_THAT, "Merge changes from Customization Parameters Wizard"); // h (M, cs)
+// TclEventType: PACKAGER_COMPONENT_RESET
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// Tcl Message: ipx::merge_project_changes hdl_parameters [ipx::current_core] 
+// Tcl Message: INFO: [IP_Flow 19-5107] Inferred bus interface 'rd_clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository). INFO: [IP_Flow 19-3166] Bus Interface 'S00_AXI': References existing memory map 'S00_AXI'. 
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Review and Package", 7); // ar (J, cs)
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+selectButton(PAResourceItoN.MessageBanner_CHANGES_DETECTED_IN_IP_THAT_REQUIRE, "IP has been modified."); // h (M, cs)
+// Tcl Message: ipx::update_checksums [ipx::current_core] 
+// Tcl Message: ipx::save_core [ipx::current_core] 
+// TclEventType: FILE_SET_CHANGE
+selectButton(PAResourceQtoS.ReviewContentPanel_RE_PACKAGE_IP, "Re-Package IP"); // a (c, cs)
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: set_property core_revision 2 [ipx::current_core] 
+// Tcl Message: ipx::update_source_project_archive -component [ipx::current_core] 
+// Tcl Message: ipx::create_xgui_files [ipx::current_core] 
+// Tcl Message: ipx::update_checksums [ipx::current_core] 
+// Tcl Message: ipx::save_core [ipx::current_core] 
+// TclEventType: FILE_SET_CHANGE
+// bz (cs):  Package IP : addNotify
+selectButton("OptionPane.button", "Yes"); // JButton (v, B)
+// Tcl Message: ipx::move_temp_component_back -component [ipx::current_core] 
+// TclEventType: PROJECT_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,591 MB. GUI used memory: 102 MB. Current time: 9/23/21, 9:28:07 PM EET
+// Tcl Message: close_project -delete 
+dismissDialog("Package IP"); // bz (cs)
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: CREATE_IP_CATALOG
+// Tcl Message: update_ip_catalog -rebuild -repo_path /home/egoncu/Desktop/github/GPS_project/ip_repo/FIFO_axis_1.0 
+// Tcl Message: INFO: [IP_Flow 19-725] Reloaded user IP repository '/home/egoncu/Desktop/github/GPS_project/ip_repo/FIFO_axis_1.0' 
+// [GUI Memory]: 183 MB (+23867kb) [06:05:05]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,956 MB. GUI used memory: 96 MB. Current time: 9/23/21, 9:58:09 PM EET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,956 MB. GUI used memory: 94 MB. Current time: 9/23/21, 10:28:08 PM EET
+// WARNING: HEventQueue.dispatchEvent() is taking  1844 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,956 MB. GUI used memory: 94 MB. Current time: 9/23/21, 10:58:10 PM EET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,956 MB. GUI used memory: 94 MB. Current time: 9/23/21, 11:28:09 PM EET
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 258ms to process. Increasing delay to 2000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1314 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2815 ms.
+// WARNING: HTimer (a Update Status Timer) is taking 8598ms to process. Increasing delay to 3000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 10604 ms. Increasing delay to 3000 ms.
