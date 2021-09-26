@@ -6,6 +6,9 @@ library xpm;
 use xpm.vcomponents.all;
 
 entity fifo_module is
+  generic (
+    DEPTH : integer := 2048
+  );
   port (
     reset  : in std_logic;
     wr_clk : in std_logic;
@@ -41,7 +44,7 @@ begin
     ECC_MODE            => "no_ecc", -- String
     FIFO_MEMORY_TYPE    => "auto", -- String
     FIFO_READ_LATENCY   => 1, -- DECIMAL
-    FIFO_WRITE_DEPTH    => 2048, -- DECIMAL
+    FIFO_WRITE_DEPTH    => DEPTH, -- DECIMAL
     FULL_RESET_VALUE    => 0, -- DECIMAL
     PROG_EMPTY_THRESH   => 10, -- DECIMAL
     PROG_FULL_THRESH    => 10, -- DECIMAL
