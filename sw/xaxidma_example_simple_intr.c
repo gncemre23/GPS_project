@@ -107,8 +107,8 @@
 #define RX_INTR_ID		XPAR_INTC_0_AXIDMA_0_S2MM_INTROUT_VEC_ID
 #define TX_INTR_ID		XPAR_INTC_0_AXIDMA_0_MM2S_INTROUT_VEC_ID
 #else
-#define RX_INTR_ID	0	//XPAR_FABRIC_AXIDMA_0_S2MM_INTROUT_VEC_ID
-#define TX_INTR_ID		XPAR_FABRIC_AXI_DMA_0_MM2S_INTROUT_INTR
+#define RX_INTR_ID		XPAR_FABRIC_AXIDMA_0_S2MM_INTROUT_VEC_ID
+#define TX_INTR_ID		XPAR_FABRIC_AXIDMA_0_MM2S_INTROUT_VEC_ID
 #endif
 
 #define TX_BUFFER_BASE		(MEM_BASE_ADDR + 0x00100000)
@@ -307,12 +307,12 @@ int main(void)
 		TxDone = 0;
 		RxDone = 0;
 		Error = 0;
-//		Status = XAxiDma_SimpleTransfer(&AxiDma,(UINTPTR) RxBufferPtr,
-//					MAX_PKT_LEN, XAXIDMA_DEVICE_TO_DMA);
-//
-//		if (Status != XST_SUCCESS) {
-//			return XST_FAILURE;
-//		}
+		Status = XAxiDma_SimpleTransfer(&AxiDma,(UINTPTR) RxBufferPtr,
+					MAX_PKT_LEN, XAXIDMA_DEVICE_TO_DMA);
+
+		if (Status != XST_SUCCESS) {
+			return XST_FAILURE;
+		}
 
 		Status = XAxiDma_SimpleTransfer(&AxiDma,(UINTPTR) TxBufferPtr,
 					MAX_PKT_LEN, XAXIDMA_DMA_TO_DEVICE);
@@ -617,6 +617,13 @@ static int SetupIntrSystem(INTC * IntcInstancePtr,
 		return XST_FAILURE;
 	}
 
+	Status = XIntc_Connect(IntcInstancePtr, RxIntrId,
+			       (XInterruptHandler) RxIntrHandler, AxiDmaPtr);
+	if (Status != XST_SUCCESS) {
+
+		xil_printf("Failed rx connect intc\r\n");
+		return XST_FAILURE;
+	}
 
 	/* Start the interrupt controller */
 	Status = XIntc_Start(IntcInstancePtr, XIN_REAL_MODE);
@@ -627,6 +634,7 @@ static int SetupIntrSystem(INTC * IntcInstancePtr,
 	}
 
 	XIntc_Enable(IntcInstancePtr, TxIntrId);
+	XIntc_Enable(IntcInstancePtr, RxIntrId);
 
 #else
 
@@ -651,7 +659,7 @@ static int SetupIntrSystem(INTC * IntcInstancePtr,
 
 	XScuGic_SetPriorityTriggerType(IntcInstancePtr, TxIntrId, 0xA0, 0x3);
 
-	//XScuGic_SetPriorityTriggerType(IntcInstancePtr, RxIntrId, 0xA0, 0x3);
+	XScuGic_SetPriorityTriggerType(IntcInstancePtr, RxIntrId, 0xA0, 0x3);
 	/*
 	 * Connect the device driver handler that will be called when an
 	 * interrupt for the device occurs, the handler defined above performs
@@ -672,7 +680,7 @@ static int SetupIntrSystem(INTC * IntcInstancePtr,
 	}
 
 	XScuGic_Enable(IntcInstancePtr, TxIntrId);
-	//XScuGic_Enable(IntcInstancePtr, RxIntrId);
+	XScuGic_Enable(IntcInstancePtr, RxIntrId);
 
 
 #endif
@@ -709,9 +717,9 @@ static void DisableIntrSystem(INTC * IntcInstancePtr,
 #ifdef XPAR_INTC_0_DEVICE_ID
 	/* Disconnect the interrupts for the DMA TX and RX channels */
 	XIntc_Disconnect(IntcInstancePtr, TxIntrId);
-	//XIntc_Disconnect(IntcInstancePtr, RxIntrId);
+	XIntc_Disconnect(IntcInstancePtr, RxIntrId);
 #else
 	XScuGic_Disconnect(IntcInstancePtr, TxIntrId);
-	//XScuGic_Disconnect(IntcInstancePtr, RxIntrId);
+	XScuGic_Disconnect(IntcInstancePtr, RxIntrId);
 #endif
 }
