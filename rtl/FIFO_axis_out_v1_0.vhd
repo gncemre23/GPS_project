@@ -16,8 +16,8 @@ entity FIFO_axis_v1_0 is
     -- Users to add ports here
 	wr_clk			: in std_logic;
 	rd_en			  : out std_logic;
-	adc_mag         : out std_logic_vector(63 downto 0);
-	adc_sign        : out std_logic_vector(63 downto 0);
+	adc_mag         : in std_logic_vector(63 downto 0);
+	adc_sign        : in std_logic_vector(63 downto 0);
 	data_valid      : out std_logic;
 	full			: out std_logic;
 
