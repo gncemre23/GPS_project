@@ -19,9 +19,11 @@ entity acquisition_decoder is
 end acquisition_decoder;
 architecture Behavioral of acquisition_decoder is
 
-  
+signal data_out_reg : std_logic_vector(15 downto 0) := x"0000";  
 
 begin
+
+data_out <= data_out_reg;
 
 process (clk)
 begin
@@ -30,18 +32,19 @@ begin
             data_out_valid <= '1';
             case data_in is
                 when "00" =>
-                    data_out <= x"000" & "0001"; --  1
+                    data_out_reg <= x"0001"; --  1
                 when "01" =>
-                    data_out <= x"111" & "1111"; -- -1 
+                    data_out_reg <= x"FFFF"; -- -1 
                 when "10" =>
-                    data_out <= x"000" & "0011"; --  3
+                    data_out_reg <= x"0003"; --  3
                 when "11" =>
-                    data_out <= x"111" & "1101"; -- -3   
-            
+                    data_out_reg <= x"FFFD"; -- -3   
+                when others =>
+                    data_out_reg <= x"0000";  
             end case;
         else
             data_out_valid <= '0';
-            data_out <= data_out;
+            data_out_reg <= data_out_reg;
         end if;
     end if;
 end process;
