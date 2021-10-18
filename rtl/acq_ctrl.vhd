@@ -11,13 +11,16 @@ entity acq_ctrl is
     clk                        : in std_logic;
     fifo_in_valid              : in std_logic;
     carrier_complex_mult_valid : in std_logic;
+    complex_mult_in            : in std_logic_vector(79 downto 0);
     inv_fft_valid              : in std_logic;
     prn_idx                    : in std_logic_vector(4 downto 0);
     inv_fft_data               : in std_logic_vector(79 downto 0);
     prn_fft_data               : in std_logic_vector(79 downto 0);
 
+    complex_delayed_valid  : out std_logic;
+    complex_delayed_data   : out std_logic_vector(79 downto 0);
     prn_fft_conj           : out std_logic_vector(79 downto 0);
-    abs_inv_fft_data       : out std_logic_vector(80 downto 0);
+    abs_inv_fft_data       : out std_logic_vector(79 downto 0);
     data_bram_addr         : out std_logic_vector(31 downto 0);
     data_bram_we           : out std_logic;
     acq_decode_valid       : out std_logic;
@@ -26,7 +29,9 @@ entity acq_ctrl is
     fifo_in_re             : out std_logic;
     PRN_bram_addr          : out std_logic_vector(31 downto 0);
     PRN_valid              : out std_logic;
-    axi_dma_tlast          : out std_logic
+    axi_dma_tlast          : out std_logic;
+    inv_fft_config_valid   : out std_logic;
+    inv_fft_config_data    : out std_logic_vector(7 downto 0)
 
   );
 end acq_ctrl;
@@ -54,7 +59,7 @@ architecture Behavioral of acq_ctrl is
 
   function abs_func(X : std_logic_vector(79 downto 0))
     return std_logic_vector is
-    variable TMP : signed(39 downto 0) := (others => '0');
+    variable TMP : signed(79 downto 0) := (others => '0');
   begin
     TMP := signed(X(79 downto 40)) * signed(X(79 downto 40)) + signed(X(39 downto 0)) * signed(X(39 downto 0));
     return std_logic_vector(TMP);
@@ -66,9 +71,11 @@ begin
   PRN_bram_addr         <= std_logic_vector(PRN_cnt_reg);
   prn_fft_conj          <= conj_func(prn_fft_data);
   abs_inv_fft_data      <= abs_func(inv_fft_data);
-  dds_phase_config_data <= std_logic_vector(frq_bin_cnt_reg);
+  dds_phase_config_data <= std_logic_vector(frq_bin_cnt_reg(23 downto 0));
   acq_decode_valid      <= acq_decoder_valid_reg;
   PRN_valid             <= PRN_valid_reg;
+  data_bram_addr        <= std_logic_vector(sample_cnt_reg);
+
   ------------------- The state machine -----------------------
 
   -- sequential part
@@ -95,11 +102,12 @@ begin
   end process;
 
   -- combinatorial part
-  process (all)
+  process (state_reg, fifo_in_valid, sample_cnt_reg, inv_fft_valid, carrier_complex_mult_valid,
+    PRN_cnt_reg, frq_bin_cnt_reg, PRN_valid_reg, prn_idx)
   begin
     --default assignments
     state_next             <= state_reg;
-    sample_cnt_next        <= sample_cnt_next;
+    sample_cnt_next        <= sample_cnt_reg;
     PRN_cnt_next           <= PRN_cnt_reg;
     fifo_in_re             <= '0';
     acq_decoder_valid_next <= '0';
@@ -108,11 +116,15 @@ begin
     frq_bin_cnt_next       <= frq_bin_cnt_reg;
     PRN_valid_next         <= PRN_valid_reg;
     data_bram_we           <= '0';
+    inv_fft_config_valid   <= '0';
+    inv_fft_config_data    <= (others => '0');
     case state_reg is
       when INIT =>
         if (fifo_in_valid = '1') then
-          state_next   <= READ_DATA_TO_BRAM;
-          PRN_cnt_next <= 1023 * unsigned(prn_idx);
+          state_next               <= READ_DATA_TO_BRAM;
+          PRN_cnt_next(9 downto 0) <= 1023 * unsigned(prn_idx);
+          inv_fft_config_data      <= "00000000";
+          inv_fft_config_valid     <= '1';
         end if;
 
       when READ_DATA_TO_BRAM =>
@@ -120,7 +132,6 @@ begin
           if (fifo_in_valid = '1') then
             sample_cnt_next <= sample_cnt_reg + 1;
             fifo_in_re      <= '1';
-            data_bram_addr  <= std_logic_vector(sample_cnt_reg);
             data_bram_we    <= '1';
           end if;
         else
@@ -137,7 +148,6 @@ begin
           if (sample_cnt_reg < SAMPLE_COUNT) then
             if (carrier_complex_mult_valid = '0') then
               sample_cnt_next        <= sample_cnt_reg + 1;
-              data_bram_addr         <= std_logic_vector(sample_cnt_reg);
               acq_decoder_valid_next <= '1';
             else
               if (PRN_cnt_reg < 1023) then
@@ -169,6 +179,19 @@ begin
         end if;
 
     end case;
+  end process;
+
+  process (clk)
+  begin
+    if rising_edge(clk) then
+      if (carrier_complex_mult_valid = '1') then
+        complex_delayed_valid <= '1';
+        complex_delayed_data  <= complex_mult_in;
+      else
+        complex_delayed_data  <= (others => '0');
+        complex_delayed_valid <= '0';
+      end if;
+    end if;
   end process;
 
 end Behavioral;
