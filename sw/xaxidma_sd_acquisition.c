@@ -115,8 +115,8 @@
 #endif
 
 #define TX_BUFFER_BASE (MEM_BASE_ADDR + 0x00100000)
-#define RX_BUFFER_BASE (MEM_BASE_ADDR + 0x00300000)
-#define RX_BUFFER_HIGH (MEM_BASE_ADDR + 0x004FFFFF)
+#define RX_BUFFER_BASE (MEM_BASE_ADDR + 0x01000000)
+#define RX_BUFFER_HIGH (MEM_BASE_ADDR + 0x02FFFFFF)
 
 #ifdef XPAR_INTC_0_DEVICE_ID
 #define INTC_DEVICE_ID XPAR_INTC_0_DEVICE_ID
@@ -223,13 +223,17 @@ volatile int Error;
  * @note		None.
  *
  ******************************************************************************/
-#define BUFLENGTH 53000
+#define BUFLENGTH 1024
 
+#define IF 14.5799999999999e6
 // -- - Find 1 chip wide C / A code phase exclude range around the peak----
 //double samplesPerCodeChip = round(settings->samplingFreq / settings->codeFreqBasis);
 // for simplicty it consider as a constant
 #define SAMPLEPERCODECHIP 53
-
+//search from IF-10khz to IF+10kHz
+#define SEARCH_BAND 20
+//frequency resolution provided by dds compiler
+#define FREQ_RES 381.46
 int main(void)
 {
     int Status;
@@ -239,14 +243,14 @@ int main(void)
     //
     //	u8 TxBufferPtr[10 * 1024] __attribute__ ((aligned(32)));
     //	u8 RxBufferPtr[10 * 1024] __attribute__ ((aligned(32)));
-    u32 rx_size = 0;
+    //u32 rx_size = 0;
 
-    BYTE work[FF_MAX_SS];
+    //BYTE work[FF_MAX_SS];
 
     //variables for SD File system
     FRESULT Res;
     UINT NumBytesRead;
-    UINT NumBytesWritten;
+    //UINT NumBytesWritten;
 
     /****************** SD Config ******************************/
 
@@ -363,16 +367,18 @@ int main(void)
 
     Xil_DCacheDisable();
     NumBytesRead = 8192;
-    rx_size = 8;
+    //rx_size = 8;
     int ms = 0;
     int PRN_index = 0;
     uint64_t acq_res[2][54][RX_SIZE / 8];
     uint64_t max0[54] = {0}, max1[54] = {0};
-    uint64_t result[54][RX_SIZE / 8];
-    uint64_t peaksize = 0;
-    int codePhase = 0;
+    uint32_t result[54][RX_SIZE / 8];
+    uint32_t peaksize = 0;
+    uint16_t codePhase = 0;
     int frequencyBinIndex = 0;
-    double acq_result[32] = {0.0};
+ //   double acq_result[32] = {0.0};
+    xil_printf("PRN  | Acquisition Result |  Codephase | Carrier frequency \r\n");
+
     for (PRN_index = 0; PRN_index < 32; PRN_index++)
     {
         *((uint32_t *)(0x43C00000)) = PRN_index;
@@ -390,7 +396,7 @@ int main(void)
             {
                 return XST_FAILURE;
             }
-            xil_printf("reading byte:%x\r\n", *((uint32_t *)TxBufferPtr + (BUFLENGTH - 16) / 4));
+//            xil_printf("reading byte:%x\r\n", *((uint32_t *)TxBufferPtr + (BUFLENGTH - 16) / 4));
 
             //sending the data read from SD to PL by AXIDMA
             Status = XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR)TxBufferPtr, NumBytesRead, XAXIDMA_DMA_TO_DEVICE);
@@ -401,9 +407,11 @@ int main(void)
 
             while (TxDone == 0)
                 ;
-
+//
+            int ix = 0;
             for (size_t freq_bin = 0; freq_bin < 54; freq_bin++)
             {
+            	RxDone = 0;
                 Status = XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR)RxBufferPtr, RX_SIZE, XAXIDMA_DEVICE_TO_DMA);
 
                 if (Status != XST_SUCCESS)
@@ -414,6 +422,7 @@ int main(void)
                 while (RxDone == 0)
                     ;
                 memcpy(acq_res[ms][freq_bin], RxBufferPtr, RX_SIZE);
+                ix++;
             }
 
             /*
@@ -426,8 +435,14 @@ int main(void)
             //		xil_printf("writing byte:%d\r\n", NumBytesWritten);
         }
 
+
+        //------------------------------ PEAK DETECTION-------------------------------------------
+
+
         for (size_t f = 0; f < 54; f++)
         {
+        	max0[f] = 0;
+        	max1[f] = 0;
             for (size_t i = 0; i < RX_SIZE / 8; i++)
             {
                 if (acq_res[0][f][i] > max0[f])
@@ -461,7 +476,7 @@ int main(void)
         peaksize = 0;
         for (size_t f = 0; f < 54; f++)
         {
-            for (size_t i = 0; i < RX_SIZE / 8; i++)
+            for (size_t i = 10; i < RX_SIZE / 8 - 10; i++)
             {
                 if (result[f][i] > peaksize)
                 {
@@ -472,53 +487,56 @@ int main(void)
             }
         }
 
-        uint64_t excludeRangeIndex1 = codePhase - SAMPLEPERCODECHIP;
-        uint64_t excludeRangeIndex2 = codePhase + SAMPLEPERCODECHIP;
-        int codePhaseRange[RX_SIZE / 8] = {0};
-        int newerCodeLen = 0;
+//        uint64_t excludeRangeIndex1 = codePhase - SAMPLEPERCODECHIP;
+//        uint64_t excludeRangeIndex2 = codePhase + SAMPLEPERCODECHIP;
+//        int codePhaseRange[RX_SIZE / 8] = {0};
+//        int newerCodeLen = 0;
 
-        if (excludeRangeIndex1 < 2)
-        {
-            for (size_t i = excludeRangeIndex2; i <= (RX_SIZE / 8 + excludeRangeIndex1); i++)
-            {
-                codePhaseRange[newerCodeLen] = i;
-                newerCodeLen++;
-            }
-        }
-        else if (excludeRangeIndex2 >= RX_SIZE / 8)
-        {
-            for (size_t i = (excludeRangeIndex2 - RX_SIZE / 8); i <= excludeRangeIndex1; i++)
-            {
-                codePhaseRange[newerCodeLen] = i;
-                newerCodeLen++;
-            }
-        }
-        else
-        {
-            int ix = 0;
-            for (size_t i = 0; i <= excludeRangeIndex1; i++)
-            {
-                codePhaseRange[newerCodeLen] = i;
-                newerCodeLen++;
-            }
-            for (size_t i = excludeRangeIndex2; i < RX_SIZE / 8; i++)
-            {
-                codePhaseRange[newerCodeLen] = i;
-                newerCodeLen++;
-            }
-        }
-
-        // Find the second highest correlation peak in the same freq.bin-- -
-        uint64_t secondPeakSize = 0;
-        for (size_t i = 0; i < newerCodeLen; i++)
-        {
-            if (secondPeakSize < result[frequencyBinIndex][codePhaseRange[i]])
-            {
-                secondPeakSize = result[frequencyBinIndex][codePhaseRange[i]];
-            }
-        }
-        acq_result[PRN_index] = (double)peaksize/(double)secondPeakSize;
-        xil_printf("PRN %d acquisiton result = %lf\r\n", PRN_index+1, acq_result);
+//        if (excludeRangeIndex1 < 2)
+//        {
+//            for (size_t i = excludeRangeIndex2; i <= (RX_SIZE / 8 + excludeRangeIndex1); i++)
+//            {
+//                codePhaseRange[newerCodeLen] = i;
+//                newerCodeLen++;
+//            }
+//        }
+//        else if (excludeRangeIndex2 >= RX_SIZE / 8)
+//        {
+//            for (size_t i = (excludeRangeIndex2 - RX_SIZE / 8); i <= excludeRangeIndex1; i++)
+//            {
+//                codePhaseRange[newerCodeLen] = i;
+//                newerCodeLen++;
+//            }
+//        }
+//        else
+//        {
+//            for (size_t i = 0; i <= excludeRangeIndex1; i++)
+//            {
+//                codePhaseRange[newerCodeLen] = i;
+//                newerCodeLen++;
+//            }
+//            for (size_t i = excludeRangeIndex2; i < RX_SIZE / 8; i++)
+//            {
+//                codePhaseRange[newerCodeLen] = i;
+//                newerCodeLen++;
+//            }
+//        }
+//
+//        // Find the second highest correlation peak in the same freq.bin-- -
+//        uint64_t secondPeakSize = 0;
+//        for (size_t i = 0; i < newerCodeLen; i++)
+//        {
+//            if (secondPeakSize < result[frequencyBinIndex][codePhaseRange[i]])
+//            {
+//                secondPeakSize = result[frequencyBinIndex][codePhaseRange[i]];
+//            }
+//        }
+        //acq_result[PRN_index] = (double)peaksize/(double)secondPeakSize;
+        float carrier_freq = IF - SEARCH_BAND/2 + FREQ_RES * frequencyBinIndex;
+        xil_printf("%d ", PRN_index+1);
+        xil_printf("     %u", peaksize);
+        xil_printf("                  %u", codePhase);
+        printf("            %f \r\n", carrier_freq);
     }
 
     f_close(&fil_in);
